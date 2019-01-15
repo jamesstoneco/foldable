@@ -31,5 +31,5 @@
     "isolatedModules": true
   },
   "include": ["src"],
-  "files": ["custom.d.ts"]
+  "files": ["src/custom.d.ts"]
 }
