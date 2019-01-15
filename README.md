@@ -1,4 +1,4 @@
-# Design System Starter Kit
+# Foldable - A very opinionated React Starter Kit
 
 - Create React App Typescript
 - Stricter Typing
