@@ -1,4 +1,4 @@
-# Foldable - A very opinionated React Starter Kit
+# Foldable - An opinionated react starter kit
 
 - Create React App Typescript
 - Stricter Typing
@@ -22,4 +22,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 tsx code fences are not supported. Use jsx instead and leave a note if there is something specific about typescript implementation. Typically the root components are not being exposed in this way and it is more important to show props and just placeholder functions to show basic functionality. Issue is with dep package markdown-as-jsx not supporting tsx
 
-        \`\`\`tsx
+        ```tsx
