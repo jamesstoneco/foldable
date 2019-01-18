@@ -4,6 +4,12 @@ import logo from "./logo.svg";
 import styled, { createGlobalStyle, keyframes } from "styled-components";
 import styledNormalize from "styled-normalize";
 
+// hack for grabing the main thread on dev, not typescript compatable
+
+// const electron = window.require("electron");
+// const fs = electron.remote.require("fs");
+// const ipcRenderer = electron.ipcRenderer;
+
 const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
 
