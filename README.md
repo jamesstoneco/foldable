@@ -6,11 +6,21 @@
 - Styled Components for CSS / visual styling
 - Storybook
 - Stylegudist + example
+- Styled Normalize
+- Redux
+- Redux Loop (middleware / side effects)
 
 Future
 
-- Redux
-- Redux Loop (middleware / side effects)
+- Create basic theme super structure for styled components
+- Some sort of basic "mixins" for common patterns
+- Lock down and force manual version updates
+- Create basic app structure
+- Add example for basic redux / redux loop side effects
+
+Additional Reading
+
+- https://www.smashingmagazine.com/2017/01/styled-components-enforcing-best-practices-component-based-systems/
 
 ## Create React App
 
