@@ -2,6 +2,7 @@
 
 # dependencies
 /node_modules
+/cypress/node_modules/
 /.pnp
 .pnp.js
 
@@ -11,6 +12,8 @@
 # production
 /build
 /dist
+/styleguide
+/storybook-static
 
 # misc
 .DS_Store
