@@ -1,7 +1,8 @@
 {
   "name": "foldable",
   "version": "0.1.0",
-  "private": true,
+  "license": "MIT",
+  "private": false,
   "dependencies": {
     "@types/jest": "^23.3.12",
     "@types/node": "10.12.18",
@@ -34,7 +35,6 @@
   },
   "browserslist": [
     ">0.2%",
-    "not dead",
     "not ie <= 11",
     "not op_mini all"
   ],
