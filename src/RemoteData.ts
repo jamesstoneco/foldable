@@ -2,6 +2,10 @@
 // TODO: Can you use an eNum instead? It seems not.
 // TODO: Unit tests
 
+// Inspiration from @ohani @olavi at Futurice and lemons.js by @nvie
+// Philosophy: use Elm matched verbiage and static typed purely functional approach flexible enough for reuse
+// Goal: to combine with an Elm style Decoder for ts runtime type enforcement after side effects induced by redux-loop
+
 export type RemoteDataType = 'NOT_ASKED' | 'LOADING' | 'SUCCESS' | 'FAILURE'
 
 interface RemoteDataNotAsked {
