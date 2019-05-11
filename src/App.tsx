@@ -1,8 +1,19 @@
-import * as React from "react";
-import logo from "./logo.svg";
+import * as React from 'react'
+import {
+  RemoteData,
+  NotAsked,
+  isNotAsked,
+  isLoading,
+  isSuccess,
+  isFailure,
+  Loading,
+  Success,
+  Failure,
+  getRemoteDataState,
+} from './RemoteData'
 
-import styled, { createGlobalStyle, keyframes } from "styled-components";
-import styledNormalize from "styled-normalize";
+import { createGlobalStyle } from 'styled-components'
+import styledNormalize from 'styled-normalize'
 
 const GlobalStyle = createGlobalStyle`
   ${styledNormalize}
@@ -18,62 +29,38 @@ const GlobalStyle = createGlobalStyle`
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
       monospace;
   }
-`;
+`
 
-const AppWrapper = styled.div`
-  text-align: center;
-`;
+interface USer {
+  name: string
+  age: number
+}
 
-const Rotate = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-`;
+interface RemoteDataError {
+  error: string
+}
 
-const Logo = styled.img`
-  animation: ${Rotate} infinite 20s linear;
-  height: 40vmin;
-`;
-
-const Link = styled.a`
-  color: #61dafb;
-`;
-
-const Header = styled.header`
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-`;
+let testData: RemoteData<RemoteDataError, USer> = NotAsked()
+testData = Loading()
+testData = Success({ name: 'James', age: 41 } as USer)
+testData = Failure({ error: 'This is an error message. Failed to load.' } as RemoteDataError)
 
 class App extends React.Component {
   render() {
     return (
-      <AppWrapper>
+      <div>
         <GlobalStyle />
-        <Header>
-          <Logo src={logo} alt={"logo"} />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <Link
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </Link>
-        </Header>
-      </AppWrapper>
-    );
+
+        <h1>Test</h1>
+        {isNotAsked(testData) && <h2>NotAsked</h2>}
+        {isLoading(testData) && <h2>Loading</h2>}
+        {isSuccess(testData) && <h2>Success {JSON.stringify(testData.data)} </h2>}
+        {isFailure(testData) && <h2>Failure {JSON.stringify(testData.error)}</h2>}
+
+        {getRemoteDataState(testData)}
+      </div>
+    )
   }
 }
 
-export default App;
+export default App
