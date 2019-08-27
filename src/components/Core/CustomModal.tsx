@@ -52,7 +52,12 @@ const CustomModalSFC: React.SFC<ModalProps> = props => (
     <StyledModal>
       <h2>
         {props.titleText}
-        <CloseButton onClick={props.onExit}>&times;</CloseButton>
+        <CloseButton
+          onClick={props.onExit}
+          data-test-id="custom-modal-close-button"
+        >
+          &times;
+        </CloseButton>
       </h2>
       <div>{props.children}</div>
     </StyledModal>

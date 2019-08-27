@@ -43,7 +43,14 @@ storiesOf("CustomModal", module)
                 </div>
               </CustomModal>
             )}
-            <button onClick={() => openModal()}>show modal</button>
+            <button
+              data-test-id="button-show-modal"
+              // HACK: set tab index to allow keyboard events in cypress
+              tabIndex={0}
+              onClick={() => openModal()}
+            >
+              show modal
+            </button>
           </>
         )}
       </State>
