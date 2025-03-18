@@ -1,0 +1,13 @@
+{
+  "name": "@foldable/config",
+  "version": "0.0.0",
+  "private": true,
+  "files": [
+    "typescript",
+    "postcss",
+    "tailwind",
+    "vite",
+    "scripts",
+    "eslint"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "name": "foldable",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "yarn workspace @foldable/frontend dev",
+    "build": "yarn workspace @foldable/frontend build",
+    "lint": "yarn workspace @foldable/frontend lint",
+    "test:tailwind": "bash tests/tailwind.test.sh",
+    "verify": "bash scripts/build-verify.sh",
+    "verify:codebase": "bash tests/verify-codebase.sh",
+    "env:load": "bash scripts/load-env.sh",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md,css}\""
+  },
+  "devDependencies": {
+    "@foldable/config": "*",
+    "@tailwindcss/postcss": "^4.0.14",
+    "prettier": "^3.5.3",
+    "eslint": "^8.57.0",
+    "typescript": "^5.4.2",
+    "vitest": "^3.0.9"
+  }
+}
