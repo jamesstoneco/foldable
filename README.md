@@ -1,59 +1,55 @@
-# foldable
+# Foldable
 
-## Motivation
+A modern web application built with React, TypeScript, and Yarn 4.
 
-Foldable v2 is guided by the following core philosophies:
+## Prerequisites
 
-1. **Modularity First**: The architecture deliberately separates concerns (apps, packages, config, scripts) to allow independent evolution of each part.
+- Node.js (version specified in `.tool-versions`)
+- Yarn (will be installed via Corepack)
 
-2. **Progressive Enhancement**: Starting with a lean foundation that can be incrementally enhanced, rather than a monolithic framework.
+## Setup
 
-3. **Flexible Customization**: Building for adaptability with configuration-based approaches rather than hardcoded solutions, particularly with theming.
+1. Install required versions using asdf:
 
-4. **Developer Experience**: Focusing on rapid iteration with modern tooling (Vite, Tailwind CSS v4) while maintaining robust type safety.
+   ```bash
+   asdf install
+   ```
 
-5. **Future-Proofing**: Creating a structure that accommodates different frontend approaches (Vite/React Router or Next.js) and device targets (web/mobile).
+2. Enable Corepack and install dependencies:
 
-6. **Maintainable Architecture**: Emphasizing clarity in project organization to reduce technical debt and make onboarding easier.
+   ```bash
+   corepack enable
+   yarn install
+   ```
 
-Foldable v2 balances flexibility with structure - providing enough guidance to maintain consistency while allowing teams to adapt the starter kit to their specific needs without fighting against the framework.
+3. Start the development server:
+   ```bash
+   yarn dev
+   ```
 
-## Implementation Status
+## Project Structure
 
-Current implementation status of Foldable v2:
+- `apps/` - Contains the main application
+- `packages/` - Shared packages and components
 
-### ✅ Completed
-- Basic monorepo structure with apps/frontend and packages/config
-- Frontend app based on Vite + React + TypeScript
-- Modern tooling setup: ESLint (flat config), Prettier, Vitest
-- Tailwind CSS v4 configuration with PostCSS
-- Code quality verification scripts
-- Project documentation and task roadmap
+## Available Scripts
 
-### 🚧 In Progress
-- Testing infrastructure with Vitest
-- Organized project structure for scalability
-- Configuration sharing between packages
+- `yarn dev` - Start development server
+- `yarn build` - Build for production
+- `yarn lint` - Run ESLint
+- `yarn format` - Format code with Prettier
+- `yarn test:tailwind` - Run Tailwind CSS tests
+- `yarn verify` - Run build verification
+- `yarn verify:codebase` - Run codebase verification
+- `yarn env:load` - Load environment variables
 
-### 📋 Planned Next
-- Component library with Radix Primitives
-- Storybook implementation
-- Theming system with CSS variables
-- React Router integration
+## Contributing
 
-## Getting Started
+1. Follow the setup instructions above
+2. Create a new branch for your feature
+3. Make your changes
+4. Submit a pull request
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/foldable.git
-cd foldable
+## License
 
-# Install dependencies
-yarn install
-
-# Start the development server
-yarn dev
-
-# Run verification scripts
-yarn verify:codebase
-```
+MIT

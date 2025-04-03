@@ -97,6 +97,68 @@ DEFAULT: "var(--radius)",
 
 ⸻
 
+🔹 ShadCN Theme Implementation Notes
+
+📌 Color System Mapping
+
+| Foundation Color | ShadCN Variable | UI Usage | Notes |
+|-----------------|----------------|----------|-------|
+| Primary (#1779ba) | `--primary` | Default buttons, links, important UI elements | Main brand color |
+| Secondary (#767676) | `--secondary` | Secondary buttons, less prominent UI elements | Complementary to primary |
+| Success (#3adb76) | `--accent` | Success states, positive actions | Currently mapped to accent |
+| Alert (#cc4b37) | `--destructive` | Error states, destructive actions | Direct mapping |
+| Warning (#ffae00) | Not mapped | Warning states | Consider adding if needed |
+
+📌 Button Variant Implementation
+
+| ShadCN Button Variant | CSS Variables Used | Foundation Equivalent |
+|----------------------|-------------------|----------------------|
+| default | `--primary`, `--primary-foreground` | Primary button |
+| outline | `--primary` (border/text) | Secondary button with border |
+| ghost | `--primary` (hover states) | Transparent button |
+| destructive | `--destructive`, `--destructive-foreground` | Alert button |
+| secondary | `--secondary`, `--secondary-foreground` | Secondary button |
+| link | `--primary` (text) | Text link |
+
+📌 Future Theme Enhancements
+
+1. **Spacing System**
+   - ShadCN relies on Tailwind's spacing scale
+   - Consider adding Foundation's spacing scale as CSS variables:
+     - `--spacing-xxs` (0.25rem)
+     - `--spacing-xs` (0.5rem)
+     - `--spacing-sm` (0.75rem)
+     - `--spacing-md` (1rem)
+     - `--spacing-lg` (1.5rem)
+     - `--spacing-xl` (2rem)
+     - `--spacing-xxl` (3rem)
+
+2. **Color System**
+   - Evaluate splitting `--accent` into `--success` and `--accent`
+   - Consider dedicated warning state styling
+   - Document color usage patterns
+
+3. **Component Consistency**
+   - Ensure consistent variable naming across components
+   - Document deviations from ShadCN patterns
+   - Create style guide for custom components
+
+📌 References
+
+1. **Foundation Settings**
+   - [Foundation SCSS Settings](https://github.com/foundation/foundation-sites/blob/develop/scss/settings/_settings.scss) - Source for Foundation's default variables and settings
+
+2. **ShadCN Documentation**
+   - [ShadCN Themes](https://ui.shadcn.com/docs/themes) - Official theming documentation
+   - [ShadCN Components](https://ui.shadcn.com/docs/components) - Component documentation and styling patterns
+   - [ShadCN Colors](https://ui.shadcn.com/docs/colors) - Color system documentation
+
+3. **Tailwind Integration**
+   - [Tailwind CSS Variables](https://tailwindcss.com/docs/customizing-colors#using-css-variables) - Using CSS variables with Tailwind
+   - [Tailwind Theme Configuration](https://tailwindcss.com/docs/theme) - Theme configuration documentation
+
+⸻
+
 🔹 3. Storybook (packages/storybook)
 
 📌 Decoupled Storybook Instance → Not included in the main app, lives separately
@@ -156,6 +218,100 @@ DEFAULT: "var(--radius)",
 ✅ Faster development cycles with immediate test feedback
 ✅ Consistent testing patterns across the entire codebase
 ✅ Better test coverage with less effort
+
+⸻
+
+📌 UI Framework Vision & Approaches
+
+🔹 Two Distinct Development Paths
+
+1. **Unstyled Foundation Approach** (Zurb Foundation-like)
+
+   - Start with unstyled components from our fork
+   - Rapid prototyping with basic layouts and brand colors
+   - Create "mid-fi" prototypes (between wireframe and high-fi)
+   - Focus on functionality and user flows first
+   - Polish styling later with Tailwind
+   - Best for: Projects needing custom design systems or unique brand identities
+
+2. **Themed shadcn Approach** (Bootstrap-like)
+   - Start with styled shadcn components
+   - Customize theme for brand identity immediately
+   - Build with production-ready styling from the start
+   - Focus on both functionality and visual design together
+   - Best for: Projects needing rapid development with polished UI
+
+🔹 Storybook as Development Workshop
+
+Storybook serves three primary purposes:
+
+1. **Rapid Prototyping Environment**
+
+   - Test layouts and patterns quickly
+   - Simulate user flows
+   - Create clickable prototypes
+   - Document design decisions
+
+2. **Component Documentation**
+
+   - Usage examples for both approaches
+   - Theme customization guides
+   - Pattern libraries
+   - Interaction documentation
+
+3. **Testing & Validation**
+   - Component behavior
+   - Theme variations
+   - Accessibility
+   - Responsive design
+
+🔹 Package Structure
+
+```
+packages/
+├── shadcn/            # Original shadcn (for Themed Approach)
+│   ├── components/    # Generated components
+│   ├── themes/        # Brand theme customizations
+│   └── package.json
+├── foldable-ui/       # Unstyled fork (for Foundation Approach)
+│   ├── components/    # Unstyled components
+│   ├── themes/        # Theme system
+│   └── package.json
+└── storybook/         # Development workshop
+    ├── src/
+    │   ├── patterns/  # Common UI patterns
+    │   ├── layouts/   # Page layouts
+    │   ├── flows/     # User flow prototypes
+    │   └── themes/    # Theme documentation
+    └── package.json
+```
+
+🔹 Development Workflow
+
+1. **Initial Setup**
+
+   - Choose development approach (Unstyled or Themed)
+   - Set up Storybook workshop
+   - Configure theme system
+
+2. **Prototyping Phase**
+
+   - Create basic layouts
+   - Define user flows
+   - Test interactions
+   - Document patterns
+
+3. **Production Development**
+
+   - Implement in frontend app
+   - Customize as needed
+   - Maintain documentation
+
+4. **Iteration & Refinement**
+   - Update patterns
+   - Refine themes
+   - Document changes
+   - Share learnings
 
 ⸻
 
